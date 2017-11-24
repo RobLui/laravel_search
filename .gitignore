@@ -1,0 +1,6 @@
+/storage/*
+/storage
+/tests
+/vendor
+/.idea
+.env
