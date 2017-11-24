@@ -39,6 +39,7 @@
                             <li class="list-group-item">
                                 <p><b>E-mail:</b> {{ $u->email }}</p>
                             </li>
+                            {{ $u }}
                         @endforeach
                     </ul>
                 @endif
