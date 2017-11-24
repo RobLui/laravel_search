@@ -1,23 +1,23 @@
 <?php
 
+Auth::routes();
+
 Route::get('/', function () {
     return view('welcome');
 });
 
-// EXCEL TOOL
-Route::get('/tool', 'ToolController@index')
-    ->name('tool')
+Route::get('/logout', 'LoginController@logout')
+    ->name('logout')
     ;
 
 // DB TOOL
 Route::get('/dbtool', 'DbToolController@index')
     ->name('dbtool')
-;
+    ;
 
 // DB TOOL
 Route::post('/dbtool', 'DbToolController@searchFunction')
     ->name('search')
-;
-Auth::routes();
+    ;
 
 Route::get('/home', 'HomeController@index')->name('home');

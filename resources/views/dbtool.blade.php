@@ -4,7 +4,7 @@
     <div class="container">
 
         <div class="jumbotron text-center">
-            <h2>Robbert's search basics!</h2>
+            <h2>ROBLUI FTS</h2>
         </div>
 
         <div class="row">
@@ -19,7 +19,7 @@
 
                             <span class="input-group-addon">
                                 <button type="submit">
-                                    <span class="glyphicon glyphicon-search"></span>
+                                    <spans class="glyphicon glyphicon-search"></spans>
                                 </button>
                             </span>
                         </div>
@@ -30,18 +30,23 @@
             {{-- DATA OUTPUT --}}
             <div class="col-sm-6 col-sm-offset-3">
                 @if(!empty($user))
-                <h4>Zoekresultaten:</h4>
-                    <ul class="list-group">
-                        @foreach($user as $u)
-                            <li class="list-group-item">
-                                <p><b>Name:</b> {{ $u->name }}</p>
-                            </li>
-                            <li class="list-group-item">
-                                <p><b>E-mail:</b> {{ $u->email }}</p>
-                            </li>
-                            {{ $u }}
-                        @endforeach
-                    </ul>
+                    @if(count($user) > 0)
+                        <h4>Zoekresultaten:</h4>
+                        <ul class="list-group">
+                            @foreach($user as $u)
+                                <li class="list-group-item">
+                                    <p><b>Name:</b> {{ $u->name }}</p>
+                                </li>
+                                <li class="list-group-item">
+                                    <p><b>E-mail:</b> {{ $u->email }}</p>
+                                </li>
+                                {{--{{ $u }}--}}
+                            @endforeach
+                        </ul>
+                    @else
+                        <h4>Try again, there wasn't anything found to your search terms</h4>
+                    @endif
+
                 @endif
             </div>
         </div>
