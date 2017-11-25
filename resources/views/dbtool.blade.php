@@ -44,7 +44,7 @@
                             @endforeach
                         </ul>
                     @else
-                        <h4>Try again, there wasn't anything found to your search terms</h4>
+                        <h4>There was nothing found for your search terms in table: Users</h4>
                     @endif
 
                 @endif
@@ -56,18 +56,20 @@
                     @if(count($test) > 0)
                         <h4>Zoekresultaten Test:</h4>
                         <ul class="list-group">
-                            @foreach($test as $u)
+                            @foreach($test as $t)
                                 <li class="list-group-item">
-                                    <p><b>Name:</b> {{ $u->name }}</p>
+                                    <p><b>Titel:</b> {{ $t->title }}</p>
                                 </li>
                                 <li class="list-group-item">
-                                    <p><b>E-mail:</b> {{ $u->email }}</p>
+                                    <p><b>Tekst:</b> {{ $t->text }}</p>
                                 </li>
-                                {{--{{ $u }}--}}
+                                <li class="list-group-item">
+                                    <p><b>Tag:</b> {{ $t->tag }}</p>
+                                </li>
                             @endforeach
                         </ul>
                     @else
-                        <h4>Try again, there wasn't anything found to your search terms</h4>
+                        <h4>There was nothing found for your search terms in table: Tests</h4>
                     @endif
 
                 @endif

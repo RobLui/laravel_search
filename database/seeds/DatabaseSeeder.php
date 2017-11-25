@@ -11,6 +11,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+        DB::table('tests')->insert([
+
+            'title' => 'Leuke titel',
+            'text' => 'random teksts',
+            'tag' => 'vuur',
+            'created_at' => NOW(),
+            'updated_at' => NOW()
+        ]);
+
     }
 }
