@@ -31,9 +31,32 @@
             <div class="col-sm-6 col-sm-offset-3">
                 @if(!empty($user))
                     @if(count($user) > 0)
-                        <h4>Zoekresultaten:</h4>
+                        <h4>Zoekresultaten User:</h4>
                         <ul class="list-group">
                             @foreach($user as $u)
+                                <li class="list-group-item">
+                                    <p><b>Name:</b> {{ $u->name }}</p>
+                                </li>
+                                <li class="list-group-item">
+                                    <p><b>E-mail:</b> {{ $u->email }}</p>
+                                </li>
+                                {{--{{ $u }}--}}
+                            @endforeach
+                        </ul>
+                    @else
+                        <h4>Try again, there wasn't anything found to your search terms</h4>
+                    @endif
+
+                @endif
+            </div>
+
+            {{-- DATA OUTPUT --}}
+            <div class="col-sm-6 col-sm-offset-3">
+                @if(!empty($test))
+                    @if(count($test) > 0)
+                        <h4>Zoekresultaten Test:</h4>
+                        <ul class="list-group">
+                            @foreach($test as $u)
                                 <li class="list-group-item">
                                     <p><b>Name:</b> {{ $u->name }}</p>
                                 </li>

@@ -33,7 +33,20 @@ class DbToolController extends Controller
                 true ,
                 1000
             );
-            return view('dbtool')->withUser($user);
+
+            $test = $s->search(
+                'Test',
+                ['title','text','tag'],
+                $req->searchtext,
+                null,
+                null,
+                true ,
+                1000
+            );
+            return view('dbtool')
+                ->withUser($user)
+                ->withTest($test)
+                ;
         }
         return view('dbtool');
     }
