@@ -24,6 +24,7 @@ class DbToolController extends Controller
         {
             $s = new Search();
 
+            // USERS
             $user = $s->search(
                 'User',
                 ['email','name'],
@@ -34,6 +35,7 @@ class DbToolController extends Controller
                 1000
             );
 
+            // TESTS
             $test = $s->search(
                 'Test',
                 ['title','text','tag'],
@@ -43,9 +45,22 @@ class DbToolController extends Controller
                 true ,
                 1000
             );
+
+            // CHARACTERS
+            $character = $s->search(
+                'Character',
+                ['title','name','text'],
+                $req->searchtext,
+                null,
+                null,
+                true ,
+                1000
+            );
+
             return view('dbtool')
                 ->withUser($user)
                 ->withTest($test)
+                ->withCharacter($character)
                 ;
         }
         return view('dbtool');
